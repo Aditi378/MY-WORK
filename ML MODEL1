@@ -1,0 +1,17 @@
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
+np.random.seed(0) ##this line ensures the randomness of the data
+height=np.random.normal(160,10,100)
+weights=0.6*height+np.random.normal(0,5,100)
+X=height.reshape(-1,1)#become a marrix of one column or the perfect data for linear regression..
+y=weights
+X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.3,random_state=42)
+# by giving test size as-0.3 we are making the test data set to 30% and random state to consistent randomness.
+model=LinearRegression()
+model.fit(X_train,y_train)
+y_pred=model.predict(X_test)
+plt.scatter(X_test,y_test,color="blue",label='ActualData')
+plt.plot(X_test,y_pred,color="red",label="RegressionLine")
+plt.show()

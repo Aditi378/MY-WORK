@@ -1,0 +1,104 @@
+import numpy as np
+#define your own ufunction
+def myadd(x,y):
+    return x+y
+myadd=np.frompyfunc(myadd,2,3)
+print(myadd([1,2,3,4],[5,6,7,8]))
+#when we have to add a particualr axis
+import numpy as np
+array1=np.array([1,2,3])
+array2=np.array([1,2,3])
+print(np.sum([array1,array2],axis=1))
+
+#commulative sum array=[1,2,3]
+aditi=np.array([1,2,3])
+print(np.cumsum(aditi))
+
+#product() method
+array1=np.array([1,2,3])
+array2=np.array([4,5,6])
+print(np.prod([array1,array2]))
+
+#cumproduct() method
+aditi=np.array([1,2,3])
+print(np.cumprod(aditi))
+
+#for finding discrete difference aditi=[1,2,3]=>2-1=1,3-2=1
+print(np.diff(aditi))
+
+#for finding LCM
+aditi1=4
+aditi2=5
+print(np.lcm(aditi1,aditi2))
+
+import numpy as np
+#rounding decimals
+#  #truncation() and fix() method
+aditi=np.trunc([-3.1666,3.6667])
+print(aditi)
+aditi=np.fix([-3.1666,3.6667])
+print(aditi)
+
+#around() method
+aditi=np.around([-3.1666,3.6667])
+print(aditi)
+
+#floor() method
+aditi=np.floor([-3.1666,3.6667])
+print(aditi)
+
+#ceil() method
+aditi=np.ceil([-3.1666,3.6667])
+print(aditi)
+
+
+
+#for finding lcm in one array only we will use lcm.reduce() method
+aditi=np.array([3,6,9])
+print(np.lcm.reduce(aditi))
+
+#arrange() method->assign all the element from start to end like
+aditi=np.arange(1,11)#so 1,11->1 2 3 4 5 6 7 8 9 10 11
+print(np.lcm.reduce(aditi))
+
+#for greatest common factor we use gcd() method -----HCF
+print(np.gcd(aditi1,aditi2))
+
+#again in gcd also if there is only one array the use gcd.reduce() method
+print(np.gcd.reduce(aditi))
+
+#numpy trignometric fucntions---all trignometric fucntions expect radian as parameter
+aditi=np.array([np.pi/2,np.pi/3,np.pi/4])
+print(np.sin(aditi))
+
+#convert degree to rad and vice versa by using these functions
+aditii=np.rad2deg(aditi)
+print(np.rad2deg(aditi))
+print(np.deg2rad(aditii))
+
+#for hyperbolic valuess
+aditi=np.sinh(np.pi/2)
+print(aditi)
+
+#for arc values
+aditi=np.arcsinh(1.0)
+print(aditi)
+
+
+#######we can do set operations also like unique intersection by using numpy
+#unique
+aditi=np.array([1,1,2,2,3,4,5,5,6,6,6])
+print(np.unique(aditi))
+
+#intersection
+aditi1=np.array([6,5,9,8,8,0])
+print(np.intersect1d(aditi,aditi1))
+
+#union
+print(np.union1d(aditi,aditi1))
+
+#difference
+print(np.setdiff1d(aditi,aditi1,assume_unique=True))
+
+#setxor1d elements which is not common in both the sets
+print(np.setxor1d(aditi,aditi1,assume_unique=True))
